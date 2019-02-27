@@ -3,7 +3,7 @@ package PriorityQueue
 import "container/heap"
 
 type Item struct {
-	priority int
+	priority uint8
 	index    int
 	value    interface{}
 }
@@ -38,7 +38,7 @@ func (q *Queue) Pop() interface{} {
 	return item
 }
 
-func (q *Queue) update(item *Item, value string, priority int) {
+func (q *Queue) update(item *Item, value string, priority uint8) {
 	item.value = value
 	item.priority = priority
 	heap.Fix(q, item.index)
