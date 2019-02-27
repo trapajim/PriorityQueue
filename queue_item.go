@@ -1,7 +1,5 @@
 package PriorityQueue
 
-import "container/heap"
-
 type Item struct {
 	priority uint8
 	index    int
@@ -41,5 +39,4 @@ func (q *Queue) Pop() interface{} {
 func (q *Queue) update(item *Item, value string, priority uint8) {
 	item.value = value
 	item.priority = priority
-	heap.Fix(q, item.index)
 }
