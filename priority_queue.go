@@ -21,7 +21,7 @@ func New(autoMutexLock bool) PriorityQueue {
 	return PriorityQueue{q: &pq, autoLock: autoMutexLock}
 }
 
-// Push add a new element with a priority (0 highest)
+// Push add a new element with a priority (0 lowest)
 func (pq *PriorityQueue) Push(value interface{}, priority uint8) (bool, error) {
 	if pq.autoLock {
 		pq.Lock()
